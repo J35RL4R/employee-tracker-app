@@ -1,0 +1,20 @@
+{
+  "name": "employee_tracker",
+  "version": "1.0.0",
+  "description": "## Table of Contents * [Description](#description) * [Installation](#installation) * [Usage](#usage) * [Credits](#credits) * [License](#License)",
+  "main": "employeeTracker.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J35RL4R/employee-tracker-app"
+  }
+}
