@@ -2,7 +2,7 @@
   "name": "employee_tracker",
   "version": "1.0.0",
   "description": "## Table of Contents * [Description](#description) * [Installation](#installation) * [Usage](#usage) * [Credits](#credits) * [License](#License)",
-  "main": "employeeTracker.js",
+  "main": "employeeTrackerApp.js",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^8.2.0",
