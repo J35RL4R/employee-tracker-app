@@ -67,6 +67,7 @@ function start() {
             }
           });
 };
+
 function viewAllEmployees() {
     connection.query("SELECT employee.first_name, employee.last_name, roles.title, roles.salary, department.name, CONCAT(e.first_name, ' ' ,e.last_name) AS Manager FROM employee INNER JOIN roles on roles.id = employee.role_id INNER JOIN department on department.id = roles.department_id left join employee e on employee.manager_id = e.id;",
          (err, res) => {
@@ -76,6 +77,7 @@ function viewAllEmployees() {
         start();
       });
 };
+
 function viewAllDepartments() {
     console.log("test");
     connection.query("SELECT employee.first_name, employee.last_name, department.name AS Department FROM employee JOIN roles ON employee.role_id = roles.id JOIN department ON roles.department_id = department.id ORDER BY employee.id;",
@@ -88,6 +90,7 @@ function viewAllDepartments() {
         start();
       });
 };
+
 function viewAllRoles() {
     connection.query("SELECT employee.first_name, employee.last_name, roles.title AS Title FROM employee JOIN roles ON employee.role_id = roles.id;",
         (err, res) => {
@@ -97,6 +100,7 @@ function viewAllRoles() {
         start();
       });
 };
+
 function addDepartment() {
 
     inquirer.prompt([
@@ -119,6 +123,7 @@ function addDepartment() {
           });
       });
 };
+
 function addRole() {
     connection.query("SELECT * FROM department",
         (err, res) => {
@@ -224,7 +229,7 @@ function addEmployee() {
             last_name: answers.lastname,
             manager_id: managerId,
             role_id: roleId
-          }, function (err) {
+          }, (err) => {
             if (err)
               throw err;
             console.table(answers);
@@ -242,7 +247,7 @@ function updateEmployeeRole() {
           {
             name: "lastName",
             type: "rawlist",
-            choices: function() {
+            choices: () => {
               var lastName = [];
               for (var i = 0; i < res.length; i++) {
                 lastName.push(res[i].last_name);
